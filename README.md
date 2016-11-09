@@ -3,7 +3,7 @@
 
 A simple url shortening service written in Go (Lang)
 
- Markup : * Tools used
-           * gin
-            * goconvey
-            * mgo 
+Techies used:
+  - gin
+  - goconvey
+  - mgo
