@@ -1,4 +1,4 @@
-package server
+package urlshortener
 
 import (
 	"github.com/smartystreets/goconvey/convey"

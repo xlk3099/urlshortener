@@ -1,8 +1,8 @@
-package main
+package urlshortener
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/urlshortener/models"
+	"github.com/xlk3099/urlshortener/models"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 	"net/http"
