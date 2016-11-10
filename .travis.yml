@@ -11,8 +11,11 @@ service:
   - mongodb
 
 before_script:
+
   - 'echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty multiverse" | sudo tee /etc/apt/sources.list.d/multiverse.list'
   - sudo apt-get update
+  - "sudo apt-get remove -y mongodb-org-server"
+  - sudo apt-get install mongodb-org
   - sudo service mongod start
   - mongo mydb_test --eval 'db.addUser("travis", "test");'
 
