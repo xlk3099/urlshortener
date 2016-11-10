@@ -16,7 +16,7 @@ type DatabaseSession struct {
 func NewSession(name string) *DatabaseSession {
 
 	// Connect to the local mongodb
-	s, err := mgo.Dial("mongodb://localhost")
+	s, err := mgo.Dial("mongodb://127.0.0.1:27017")
 
 	// If error happens, panic
 	if err != nil {

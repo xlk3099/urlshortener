@@ -3,10 +3,12 @@ sudo: false
 go:
   - 1.7
   - tip
-service: mongodb
+service: 
+  - mongodb
 script:
-  - bash ./coverage.sh
+
 after_success:
+  - bash ./coverage.sh
   - bash <(curl -s https://codecov.io/bash)
   - rm coverage.txt
 notifications:
