@@ -12,6 +12,7 @@ type DatabaseSession struct {
 
 // NewSession : return a new session connected to mongodb
 func NewSession(name string) *DatabaseSession {
+
 	// Connect to the local mongodb
 	s, err := mgo.Dial("mongodb://localhost")
 
