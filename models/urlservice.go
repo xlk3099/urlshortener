@@ -1,11 +1,8 @@
 package models
 
-import (
-	"gopkg.in/mgo.v2/bson"
-)
-
-type URLService struct {
-	ID            bson.ObjectId `bson:"_id"`
-	OriginalURL   string        `bson:"lurl"`
-	ShortenendURL string        `bson:"surl"`
+// URLdoc document structure used to store in the Mongodb collection
+type URLdoc struct {
+	ID            int    `bson:"_id"`
+	OriginalURL   string `bson:"lurl"`
+	ShortenendURL string `bson:"surl"`
 }
