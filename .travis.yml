@@ -3,12 +3,19 @@ sudo: false
 go:
   - 1.7
   - tip
+
 service: 
   - mongodb
+
+before_script:
+  - sleep 15
+  - mongo mydb_test --eval 'db.addUser("travis", "test");'
+
 script:
+  - bash ./coverage.sh
 
 after_success:
-  - bash ./coverage.sh
   - bash <(curl -s https://codecov.io/bash)
   - rm coverage.txt
+
 notifications:
