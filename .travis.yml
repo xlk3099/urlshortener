@@ -1,5 +1,8 @@
 language: go
+
+
 sudo: required
+
 go:
   - 1.7
   - tip
@@ -8,7 +11,8 @@ service:
   - mongodb
 
 before_script:
-  - sleep 15
+  - 'echo "deb http://us.archive.ubuntu.com/ubuntu/ trusty multiverse" | sudo tee /etc/apt/sources.list.d/multiverse.list'
+  - sudo apt-get update
   - sudo service mongod start
   - mongo mydb_test --eval 'db.addUser("travis", "test");'
 
