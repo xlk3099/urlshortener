@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"os"
 )
 
 // DatabaseSession : a struct to wrap mgo.session
@@ -16,7 +17,7 @@ type DatabaseSession struct {
 func NewSession(name string) *DatabaseSession {
 
 	// Connect to the local mongodb
-	s, err := mgo.Dial("mongodb://127.0.0.1:27017")
+	s, err := mgo.Dial(os.Getenv("DB_HOST"))
 
 	// If error happens, panic
 	if err != nil {

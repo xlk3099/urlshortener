@@ -17,7 +17,7 @@ before_script:
   - "sudo apt-get remove -y mongodb-org-server"
   - sudo apt-get install mongodb-org
   - sudo service mongod start
-  - mongo mydb_test --eval 'db.createUser("testuser", "test");'
+  - mongo mydb_test --eval 'db.addUser("travis", "test");'
 
 script:
   - bash ./coverage.sh
@@ -26,4 +26,6 @@ after_success:
   - bash <(curl -s https://codecov.io/bash)
   - rm coverage.txt
 
-notifications:
+env:
+  - DB_NAME=urlshortener
+  - DB_HOST=localhost

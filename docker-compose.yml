@@ -1,0 +1,13 @@
+api:  
+  build: ./
+  ports: 
+    - 8080:8080
+  links:
+    - database
+  environment:
+    - DB_NAME=urlshortener
+    - DB_HOST=urlshortener_database_1
+
+database:  
+  image: mongo:3.0
+  command: mongod --smallfiles --quiet --logpath=/dev/null
