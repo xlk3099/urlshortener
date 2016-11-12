@@ -17,7 +17,7 @@ before_script:
   - "sudo apt-get remove -y mongodb-org-server"
   - sudo apt-get install mongodb-org
   - sudo service mongod start
-  - mongo mydb_test --eval 'db.addUser("travis", "test");'
+  - mongo mydb_test --eval 'db.createUser("travis", "test");'
 
 script:
   - bash ./coverage.sh
