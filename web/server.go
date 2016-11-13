@@ -8,6 +8,7 @@ import (
 	. "github.com/xlk3099/urlshortener/utils"
 	"gopkg.in/mgo.v2/bson"
 	"net/http"
+	"os"
 )
 
 // urlserivceid used in counter collection, this can be configured as environment variable
@@ -15,9 +16,6 @@ const urlServiceID = "urlserviceid"
 
 // Collection name used to store original url & shortened url pair, can be configured as environment variable
 const urlSerivceCollection = "URLservice"
-
-// url prefix for shortened url, can be configured as environment variable.
-const urlPrefix = os.Getenv("URL_PREFIX")
 
 type LURL struct {
 	OriginalURL string `json:"url" binding:"required"`
@@ -70,6 +68,9 @@ func handleShortenURLRequest(s *DatabaseSession, lURL string) string {
 		return result.ShortenedURL
 
 	} else {
+
+		// Get the URL prefix defined in the system environment variable
+		urlPrefix := os.Getenv("URL_PREFIX")
 
 		// Get current request id
 		id := s.GetNextSeq(urlServiceID)
