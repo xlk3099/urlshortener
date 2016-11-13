@@ -24,6 +24,3 @@ script:
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - rm coverage.txt
-
-env:
-  - DB_NAME=urlshortener DB_HOST=localhost URL_PREFIX=http://localhost/
