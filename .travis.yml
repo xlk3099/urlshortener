@@ -5,7 +5,6 @@ sudo: required
 
 go:
   - 1.7
-  - tip
 
 service: 
   - mongodb
@@ -27,6 +26,4 @@ after_success:
   - rm coverage.txt
 
 env:
-  - DB_NAME=urlshortener
-  - DB_HOST=localhost
-  - URL_PREFIX=http://localhost/
+  - DB_NAME=urlshortener DB_HOST=localhost URL_PREFIX=http://localhost/
