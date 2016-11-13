@@ -17,7 +17,7 @@ const urlServiceID = "urlserviceid"
 const urlSerivceCollection = "URLservice"
 
 // url prefix for shortened url, can be configured as environment variable.
-const urlPrefix = "http://localhost/"
+const urlPrefix = os.Getenv("URL_PREFIX")
 
 type LURL struct {
 	OriginalURL string `json:"url" binding:"required"`
