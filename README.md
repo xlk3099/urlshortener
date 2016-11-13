@@ -3,7 +3,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/xlk3099/urlshortener)](https://goreportcard.com/report/github.com/xlk3099/urlshortener)
 [![codecov](https://codecov.io/gh/xlk3099/urlshortener/branch/master/graph/badge.svg)](https://codecov.io/gh/xlk3099/urlshortener)
 
-A simple url shortening service written in Go (Lang), it encodes the request_id to base62 format as the shortened url.
+A simple url shortening service written in Go, it encodes an input long url to a shortened url by base62 encoding its request_id.
 
 * If request_id is in 0 ~ 61, the shortened url  would be 1 char
 * If request_id is in 62 ~ 3843, the shortened url would be 2 chars
