@@ -13,7 +13,7 @@ A simple url shortening service written in Go, it encodes an input long url to a
 * ...
 
 ### TechStack:
-  - Restful server using Gin framework
+  - Http server using Gin framework
   - MongoDB to store orignal & shortened url data
   - Dockerfile & docker_compose.yml to help easy deploy
 
