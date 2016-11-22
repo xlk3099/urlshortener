@@ -22,7 +22,7 @@ To build the docker image
 ```sh
 $ docker-compose build
 ```
-To start 
+### To start 
 ```sh
 $ docker-compose up
 ```
